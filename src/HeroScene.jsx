@@ -3,97 +3,97 @@ import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { Stars, Float, Sparkles, MeshDistortMaterial } from '@react-three/drei';
 import * as THREE from 'three';
 
-// Cute Birthday Cake Component
-function BirthdayCake() {
+// Elegant Birthday Cake Component
+function ElegantBirthdayCake() {
   const cakeRef = useRef();
   const candleRefs = useRef([]);
   
   useFrame((state, delta) => {
     if (cakeRef.current) {
-      cakeRef.current.rotation.y += delta * 0.3;
-      // Gentle bounce
-      cakeRef.current.position.y = Math.sin(state.clock.elapsedTime * 1.5) * 0.2;
+      cakeRef.current.rotation.y += delta * 0.15; // Slower rotation
+      // Gentle, subtle bounce
+      cakeRef.current.position.y = Math.sin(state.clock.elapsedTime * 0.8) * 0.1;
     }
     
-    // Animate candles
+    // Animate candles with subtle movement
     candleRefs.current.forEach((candle, index) => {
       if (candle) {
-        candle.rotation.z = Math.sin(state.clock.elapsedTime * 2 + index) * 0.1;
+        candle.rotation.z = Math.sin(state.clock.elapsedTime * 1.2 + index) * 0.05;
       }
     });
   });
 
   return (
     <group>
-      {/* Main Cake Base */}
-      <Float speed={1.5} rotationIntensity={0.2} floatIntensity={0.5}>
+      {/* Main Elegant Cake */}
+      <Float speed={0.8} rotationIntensity={0.1} floatIntensity={0.3}>
         <group ref={cakeRef} position={[0, -1, 0]}>
-          {/* Bottom Layer */}
+          {/* Bottom Layer - Soft Cream */}
           <mesh position={[0, 0, 0]}>
             <cylinderGeometry args={[2, 2, 0.8, 32]} />
             <meshPhysicalMaterial
-              color="#ff69b4"
-              roughness={0.3}
-              metalness={0.1}
-              emissive="#ff1493"
-              emissiveIntensity={0.1}
+              color="#e8dcc6"
+              roughness={0.4}
+              metalness={0.05}
+              emissive="#f5f2ed"
+              emissiveIntensity={0.02}
             />
           </mesh>
           
-          {/* Middle Layer */}
+          {/* Middle Layer - Warm Taupe */}
           <mesh position={[0, 0.6, 0]}>
             <cylinderGeometry args={[1.5, 1.5, 0.6, 32]} />
             <meshPhysicalMaterial
-              color="#ffb347"
-              roughness={0.3}
-              metalness={0.1}
-              emissive="#ff8c00"
-              emissiveIntensity={0.1}
+              color="#d4c4a8"
+              roughness={0.4}
+              metalness={0.05}
+              emissive="#e8dcc6"
+              emissiveIntensity={0.03}
             />
           </mesh>
           
-          {/* Top Layer */}
+          {/* Top Layer - Soft Sage */}
           <mesh position={[0, 1.1, 0]}>
             <cylinderGeometry args={[1, 1, 0.4, 32]} />
             <meshPhysicalMaterial
-              color="#98fb98"
-              roughness={0.3}
-              metalness={0.1}
-              emissive="#00ff7f"
-              emissiveIntensity={0.1}
+              color="#b8c5a6"
+              roughness={0.4}
+              metalness={0.05}
+              emissive="#d4c4a8"
+              emissiveIntensity={0.02}
             />
           </mesh>
           
-          {/* Candles */}
-          {Array.from({ length: 5 }, (_, i) => {
-            const angle = (i / 5) * Math.PI * 2;
-            const x = Math.cos(angle) * 0.6;
-            const z = Math.sin(angle) * 0.6;
+          {/* Elegant Candles */}
+          {Array.from({ length: 3 }, (_, i) => {
+            const angle = (i / 3) * Math.PI * 2;
+            const x = Math.cos(angle) * 0.5;
+            const z = Math.sin(angle) * 0.5;
             
             return (
-              <group key={i} position={[x, 1.5, z]}>
+              <group key={i} position={[x, 1.4, z]}>
                 {/* Candle stick */}
                 <mesh 
                   ref={(el) => candleRefs.current[i] = el}
                   position={[0, 0, 0]}
                 >
-                  <cylinderGeometry args={[0.03, 0.03, 0.3, 8]} />
+                  <cylinderGeometry args={[0.025, 0.025, 0.25, 8]} />
                   <meshPhysicalMaterial
-                    color="#fff44f"
-                    emissive="#fff44f"
-                    emissiveIntensity={0.3}
+                    color="#f5f2ed"
+                    emissive="#e8dcc6"
+                    emissiveIntensity={0.1}
                   />
                 </mesh>
                 
-                {/* Flame */}
-                <mesh position={[0, 0.2, 0]}>
-                  <sphereGeometry args={[0.05, 8, 8]} />
+                {/* Gentle Flame */}
+                <mesh position={[0, 0.15, 0]}>
+                  <sphereGeometry args={[0.04, 8, 8]} />
                   <meshPhysicalMaterial
-                    color="#ff6347"
-                    emissive="#ff4500"
-                    emissiveIntensity={0.8}
+                    color="#c9ad7f"
+                    emissive="#d4c4a8"
+                    emissiveIntensity={0.3}
                     transparent
-                    opacity={0.8}
+                    opacity={0.9}
                   />
                 </mesh>
               </group>
@@ -102,103 +102,97 @@ function BirthdayCake() {
         </group>
       </Float>
       
-      {/* Sparkles around cake */}
+      {/* Subtle sparkles around cake */}
       <Sparkles
-        count={80}
-        scale={[6, 6, 6]}
-        size={4}
-        speed={0.6}
-        color="#fff44f"
+        count={40}
+        scale={[4, 4, 4]}
+        size={2}
+        speed={0.3}
+        color="#e8dcc6"
       />
     </group>
   );
 }
 
-// Cute Floating Balloons
-function FloatingBalloons() {
-  const balloonRefs = useRef([]);
-  const stringRefs = useRef([]);
+// Gentle Floating Elements
+function FloatingElements() {
+  const elementRefs = useRef([]);
   
-  const balloonColors = ['#ff69b4', '#87ceeb', '#98fb98', '#ffb347', '#dda0dd'];
+  const elementColors = ['#e8dcc6', '#b8c5a6', '#d4c4a8', '#c9ad7f'];
   
   useFrame((state, delta) => {
-    balloonRefs.current.forEach((balloon, index) => {
-      if (balloon) {
-        // Gentle floating motion
-        balloon.position.y = 2 + Math.sin(state.clock.elapsedTime + index) * 0.3;
-        balloon.position.x = Math.sin(state.clock.elapsedTime * 0.5 + index) * 0.5;
-        balloon.rotation.z = Math.sin(state.clock.elapsedTime + index) * 0.1;
+    elementRefs.current.forEach((element, index) => {
+      if (element) {
+        // Very gentle floating motion
+        element.position.y = 2 + Math.sin(state.clock.elapsedTime * 0.6 + index) * 0.2;
+        element.position.x = Math.sin(state.clock.elapsedTime * 0.3 + index) * 0.3;
+        element.rotation.z = Math.sin(state.clock.elapsedTime * 0.4 + index) * 0.05;
       }
     });
   });
 
   return (
-    <group position={[3, 0, -2]}>
-      {balloonColors.map((color, index) => (
+    <group position={[2.5, 0, -1.5]}>
+      {elementColors.map((color, index) => (
         <group key={index}>
-          {/* Balloon */}
-          <Float speed={1 + index * 0.2} rotationIntensity={0.1} floatIntensity={0.8}>
+          {/* Floating sphere */}
+          <Float speed={0.5 + index * 0.1} rotationIntensity={0.05} floatIntensity={0.4}>
             <mesh 
-              ref={(el) => balloonRefs.current[index] = el}
-              position={[index * 0.8 - 1.6, 2 + index * 0.3, 0]}
+              ref={(el) => elementRefs.current[index] = el}
+              position={[index * 0.6 - 1, 2 + index * 0.2, 0]}
             >
-              <sphereGeometry args={[0.4, 16, 16]} />
+              <sphereGeometry args={[0.3, 12, 12]} />
               <MeshDistortMaterial
                 color={color}
-                distort={0.1}
-                speed={1}
-                roughness={0.2}
+                distort={0.05}
+                speed={0.5}
+                roughness={0.4}
                 metalness={0.1}
                 emissive={color}
-                emissiveIntensity={0.2}
+                emissiveIntensity={0.08}
+                transparent
+                opacity={0.8}
               />
             </mesh>
           </Float>
-          
-          {/* String */}
-          <mesh position={[index * 0.8 - 1.6, 1, 0]}>
-            <cylinderGeometry args={[0.005, 0.005, 2, 4]} />
-            <meshBasicMaterial color="#ffffff" />
-          </mesh>
         </group>
       ))}
     </group>
   );
 }
 
-// Cute Confetti Particles
-function ConfettiParticles() {
+// Subtle Particles
+function SubtleParticles() {
   const particlesRef = useRef();
-  const particleCount = 150;
+  const particleCount = 80;
 
   const particles = useMemo(() => {
     const positions = new Float32Array(particleCount * 3);
     const colors = new Float32Array(particleCount * 3);
     const sizes = new Float32Array(particleCount);
 
-    const confettiColors = [
-      new THREE.Color('#ff69b4'),
-      new THREE.Color('#ffb347'),
-      new THREE.Color('#98fb98'),
-      new THREE.Color('#87ceeb'),
-      new THREE.Color('#dda0dd'),
-      new THREE.Color('#fff44f')
+    const particleColors = [
+      new THREE.Color('#e8dcc6'),
+      new THREE.Color('#d4c4a8'),
+      new THREE.Color('#b8c5a6'),
+      new THREE.Color('#c9ad7f'),
+      new THREE.Color('#d4a99a')
     ];
 
     for (let i = 0; i < particleCount; i++) {
       // Position
-      positions[i * 3] = (Math.random() - 0.5) * 25;
-      positions[i * 3 + 1] = (Math.random() - 0.5) * 25;
-      positions[i * 3 + 2] = (Math.random() - 0.5) * 25;
+      positions[i * 3] = (Math.random() - 0.5) * 20;
+      positions[i * 3 + 1] = (Math.random() - 0.5) * 20;
+      positions[i * 3 + 2] = (Math.random() - 0.5) * 20;
 
       // Color
-      const color = confettiColors[Math.floor(Math.random() * confettiColors.length)];
+      const color = particleColors[Math.floor(Math.random() * particleColors.length)];
       colors[i * 3] = color.r;
       colors[i * 3 + 1] = color.g;
       colors[i * 3 + 2] = color.b;
 
       // Size
-      sizes[i] = Math.random() * 2 + 1;
+      sizes[i] = Math.random() * 1.5 + 0.5;
     }
 
     return { positions, colors, sizes };
@@ -206,15 +200,15 @@ function ConfettiParticles() {
 
   useFrame((state, delta) => {
     if (particlesRef.current) {
-      particlesRef.current.rotation.y += delta * 0.1;
-      particlesRef.current.rotation.x += delta * 0.05;
+      particlesRef.current.rotation.y += delta * 0.05;
+      particlesRef.current.rotation.x += delta * 0.02;
       
-      // Make particles fall gently
+      // Very gentle falling motion
       const positions = particlesRef.current.geometry.attributes.position.array;
       for (let i = 1; i < positions.length; i += 3) {
-        positions[i] -= delta * 0.5; // Fall down
-        if (positions[i] < -12) {
-          positions[i] = 12; // Reset to top
+        positions[i] -= delta * 0.2; // Slower fall
+        if (positions[i] < -10) {
+          positions[i] = 10; // Reset to top
         }
       }
       particlesRef.current.geometry.attributes.position.needsUpdate = true;
@@ -244,10 +238,10 @@ function ConfettiParticles() {
         />
       </bufferGeometry>
       <pointsMaterial
-        size={0.1}
+        size={0.08}
         vertexColors
         transparent
-        opacity={0.8}
+        opacity={0.6}
         sizeAttenuation={true}
         blending={THREE.AdditiveBlending}
       />
@@ -255,31 +249,31 @@ function ConfettiParticles() {
   );
 }
 
-// Cute Rainbow Ring
-function RainbowRing() {
+// Elegant Geometric Ring
+function ElegantRing() {
   const ringRef = useRef();
   
   useFrame((state, delta) => {
     if (ringRef.current) {
-      ringRef.current.rotation.z += delta * 0.5;
-      ringRef.current.rotation.y += delta * 0.3;
-      // Gentle pulsing
-      const scale = 1 + Math.sin(state.clock.elapsedTime * 2) * 0.1;
+      ringRef.current.rotation.z += delta * 0.2;
+      ringRef.current.rotation.y += delta * 0.15;
+      // Very subtle pulsing
+      const scale = 1 + Math.sin(state.clock.elapsedTime * 1.5) * 0.05;
       ringRef.current.scale.setScalar(scale);
     }
   });
 
   return (
-    <Float speed={2} rotationIntensity={0.2} floatIntensity={0.3}>
-      <mesh ref={ringRef} position={[-3, 1, -1]}>
-        <torusGeometry args={[1.5, 0.1, 8, 50]} />
+    <Float speed={1} rotationIntensity={0.1} floatIntensity={0.2}>
+      <mesh ref={ringRef} position={[-2.5, 0.5, -1]}>
+        <torusGeometry args={[1.2, 0.08, 6, 30]} />
         <meshPhysicalMaterial
-          color="#ff69b4"
-          emissive="#ff1493"
-          emissiveIntensity={0.4}
+          color="#c9ad7f"
+          emissive="#d4c4a8"
+          emissiveIntensity={0.15}
           transparent
-          opacity={0.8}
-          roughness={0.1}
+          opacity={0.9}
+          roughness={0.3}
           metalness={0.2}
         />
       </mesh>
@@ -287,83 +281,77 @@ function RainbowRing() {
   );
 }
 
-// Enhanced Camera Controller with more playful movement
-function CuteCamera() {
+// Gentle Camera Movement
+function GentleCamera() {
   const { camera } = useThree();
   
   useFrame((state) => {
     const time = state.clock.elapsedTime;
-    // More gentle and cute camera movement
-    camera.position.x = Math.sin(time * 0.2) * 1.5;
-    camera.position.y = Math.cos(time * 0.15) * 0.8 + 0.5;
-    camera.position.z = 8 + Math.sin(time * 0.1) * 0.5;
+    // Very subtle and gentle camera movement
+    camera.position.x = Math.sin(time * 0.1) * 0.8;
+    camera.position.y = Math.cos(time * 0.08) * 0.4 + 0.3;
+    camera.position.z = 7 + Math.sin(time * 0.05) * 0.3;
     camera.lookAt(0, 0, 0);
   });
 
   return null;
 }
 
-// Cute Lighting Setup
-function CuteLighting() {
+// Soft Elegant Lighting
+function ElegantLighting() {
   return (
     <>
       {/* Warm ambient light */}
-      <ambientLight intensity={0.6} color="#fff5ee" />
+      <ambientLight intensity={0.7} color="#faf8f5" />
       
       {/* Main directional light */}
       <directionalLight
-        position={[10, 10, 5]}
-        intensity={1.2}
+        position={[8, 8, 4]}
+        intensity={0.8}
         color="#ffffff"
         castShadow
       />
       
-      {/* Colorful point lights for party atmosphere */}
+      {/* Subtle colored point lights */}
       <pointLight 
-        position={[5, 3, 5]} 
-        intensity={1} 
-        color="#ff69b4"
-        distance={20}
-      />
-      <pointLight 
-        position={[-5, 2, -5]} 
-        intensity={0.8} 
-        color="#87ceeb"
+        position={[4, 2, 4]} 
+        intensity={0.4} 
+        color="#e8dcc6"
         distance={15}
       />
       <pointLight 
-        position={[0, 5, -3]} 
-        intensity={0.9} 
-        color="#98fb98"
-        distance={18}
-      />
-      <pointLight 
-        position={[3, -2, 8]} 
-        intensity={0.7} 
-        color="#ffb347"
+        position={[-4, 1, -4]} 
+        intensity={0.3} 
+        color="#b8c5a6"
         distance={12}
       />
+      <pointLight 
+        position={[0, 4, -2]} 
+        intensity={0.35} 
+        color="#d4c4a8"
+        distance={14}
+      />
       
-      {/* Spotlight for dramatic effect */}
+      {/* Soft top light */}
       <spotLight
-        position={[0, 15, 0]}
-        angle={0.4}
+        position={[0, 10, 0]}
+        angle={0.3}
         penumbra={1}
-        intensity={0.8}
-        color="#fff44f"
+        intensity={0.3}
+        color="#c9ad7f"
         castShadow
       />
     </>
   );
 }
 
-// Main Cute Hero Scene Component
+// Main Elegant Hero Scene Component
 export function HeroScene() {
   return (
     <Canvas 
       camera={{ 
-        position: [0, 2, 8], 
-        fov: 65,
+        position: [0, 1.5, 7], 
+        fov: 60,
         near: 0.1,
         far: 100
       }} 
@@ -375,46 +363,46 @@ export function HeroScene() {
       }}
       shadows
     >
-      {/* Cute camera movement */}
-      <CuteCamera />
+      {/* Gentle camera movement */}
+      <GentleCamera />
       
-      {/* Party lighting */}
-      <CuteLighting />
+      {/* Elegant lighting */}
+      <ElegantLighting />
       
-      {/* Starry background */}
+      {/* Subtle starry background */}
       <Stars 
-        radius={100} 
-        depth={50} 
-        count={2000} 
-        factor={4} 
-        saturation={0.8} 
+        radius={80} 
+        depth={40} 
+        count={1000} 
+        factor={2} 
+        saturation={0.3} 
         fade 
-        speed={0.3}
+        speed={0.1}
       />
       
-      {/* Main birthday cake centerpiece */}
-      <BirthdayCake />
+      {/* Main elegant cake centerpiece */}
+      <ElegantBirthdayCake />
       
-      {/* Floating balloons */}
-      <FloatingBalloons />
+      {/* Floating elements */}
+      <FloatingElements />
       
-      {/* Confetti particles */}
-      <ConfettiParticles />
+      {/* Subtle particles */}
+      <SubtleParticles />
       
-      {/* Rainbow ring decoration */}
-      <RainbowRing />
+      {/* Elegant ring decoration */}
+      <ElegantRing />
       
-      {/* Additional sparkles for magic */}
+      {/* Additional subtle sparkles */}
       <Sparkles
-        count={200}
-        scale={[15, 15, 15]}
-        size={2}
-        speed={0.4}
-        color="#ffffff"
+        count={60}
+        scale={[12, 12, 12]}
+        size={1}
+        speed={0.2}
+        color="#e8dcc6"
       />
       
-      {/* Party atmosphere fog */}
-      <fog attach="fog" args={['#0a0a0a', 12, 35]} />
+      {/* Soft atmospheric fog */}
+      <fog attach="fog" args={['#faf8f5', 8, 25]} />
     </Canvas>
   );
 }
