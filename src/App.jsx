@@ -8,9 +8,9 @@ import './App.css';
 
 // --- AREA UNTUK ANDA EDIT ---
 const NAMA_PACAR = "Ayumi";
-const NAMA_ANDA = "Ravi";
+const NAMA_ANDA = "Pata";
 const TANGGAL_ULTAH = "14 September 2025";
-const LOKASI_KADO = "meja kerjamu";
+const LOKASI_KADO = "Indonesia";
 const DATA_KUTIPAN = [
   { 
     text: "Happy 22nd birthdayyy! wow, you’re getting older now😋 but i really wish all the best for you. I hope you have a long and happy life, stay healthy, and everything you do goes smoothly. I hope all the good things always come to you, because you deserve it. I’m so thankful that i meet you, and thankful for every single thing about you. You always make me feel lucky, and i don’t take it for granted. Thanks for not leaving me when things were so hard for me. That means a lot. I love you sooooooo muchhh🫶🏼🫶🏼🫶🏼🫶🏼", 
@@ -288,7 +288,7 @@ const QuotesSection = () => (
         </motion.div>
         <h2 className="section-title elegant-section-title">Kata Mereka Tentangmu</h2>
         <p className="section-subtitle elegant-subtitle">
-          Testimoni dari orang-orang yang telah merasakan kehangatan dan kebaikan hatimu.
+          Pesan dari orang-orang yang telah merasakan kehangatan dan kebaikan hati Ayumi.
         </p>
       </motion.div>
       
