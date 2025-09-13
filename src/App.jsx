@@ -12,6 +12,11 @@ const NAMA_ANDA = "Pata";
 const TANGGAL_ULTAH = "14 September 2025";
 const LOKASI_KADO = "Indonesia";
 const DATA_KUTIPAN = [
+  {
+    text: "Selamat bertambah usia, orang yang paling kuat dan berhati lembut. Di hari spesial ini, aku ingin kamu tahu betapa aku mengagumi caramu menghadapi segalanya dengan senyuman. Kamu adalah inspirasiku. Terima kasih telah menjadi tempatku pulang, zona amanku, dan pendukung terbesarku. Dunia mungkin tidak selalu baik, tapi bersamamu, semuanya terasa mungkin. Semoga tahun ini membawa semua yang kamu impikan.",
+    author: "Pata, Pacarmu",
+    emoji: "💫"
+  },
   { 
     text: "Happy 22nd birthdayyy! wow, you’re getting older now😋 but i really wish all the best for you. I hope you have a long and happy life, stay healthy, and everything you do goes smoothly. I hope all the good things always come to you, because you deserve it. I’m so thankful that i meet you, and thankful for every single thing about you. You always make me feel lucky, and i don’t take it for granted. Thanks for not leaving me when things were so hard for me. That means a lot. I love you sooooooo muchhh🫶🏼🫶🏼🫶🏼🫶🏼", 
     author: "NCIP, Sahabat Tercinta",
@@ -26,7 +31,17 @@ const DATA_KUTIPAN = [
     text: "Ayumi mengajarkan saya arti dari keindahan sederhana dalam hidup. Bersamanya, dunia terasa lebih berwarna dan bermakna.", 
     author: "Jec, Sahabat Tercinta",
     emoji: "💫"
-  }
+  },
+  { 
+    text: "マイナス1歳から死に向かっている。ジョコウィ万歳！ブロンド万歳！", 
+    author: "Mazmur, Teman Seperjuangan",
+    emoji: "💫"
+  },
+  { 
+    text: "Ayumi mengajarkan saya arti dari keindahan sederhana dalam hidup. Bersamanya, dunia terasa lebih berwarna dan bermakna.", 
+    author: "Jec, Sahabat Tercinta",
+    emoji: "💫"
+  },
 ];
 // --- AKHIR AREA EDIT ---
 
