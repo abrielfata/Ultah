@@ -33,7 +33,7 @@ const DATA_KUTIPAN = [
     emoji: "💫"
   },
   { 
-    text: "Ami, hidup tuh jangan dibikin ribet. Soal makan, minum, atau apapun itu, santai aja! Yang penting kamu happy dan sehat. Selamat ulang tahun ya, semoga panjang umur, sehat selalu, dan semua cita-cita tercapai.", 
+    text: "happy birthdayy ambruyyy (ami ambruy) semogaa d umur yg ini semakin bijakkk, semakin sayang orang tua, ,sayang aki n nini, sayang fata. semoga apa yang manee harapkan di umur ini terwujud satu per satu. terima kasihhh sudaah mendengarkann curhatan aingg di tahun kmrenn. suksess buat manee ya mii, wish you all the besttt", 
     author: "Dika, Teman Seperjuangan",
     emoji: "🕊️"
   }
