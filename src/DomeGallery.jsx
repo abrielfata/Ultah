@@ -3,15 +3,34 @@ import { useGesture } from '@use-gesture/react';
 import './DomeGallery.css';
 
 // --- AREA UNTUK ANDA EDIT ---
-// Ganti daftar gambar ini dengan foto-foto Anda
+// Ganti daftar gambar ini dengan nama file foto Anda di folder public/foto
 const FOTO_ANDA = [
-  { src: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=500&h=700&fit=crop', alt: 'Momen 1' },
-  { src: 'https://images.unsplash.com/photo-1509967419530-da38b4704bc6?w=500&h=700&fit=crop', alt: 'Momen 2' },
-  { src: 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=500&h=700&fit=crop', alt: 'Momen 3' },
-  { src: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=500&h=700&fit=crop', alt: 'Momen 4' },
-  { src: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=500&h=700&fit=crop', alt: 'Momen 5' },
-  { src: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=500&h=700&fit=crop', alt: 'Momen 6' },
-  // Tambahkan foto-foto lain di sini
+  // Pastikan file-file ini ada di dalam folder 'public/foto/'
+  { src: '/foto/bayi.jpg', alt: 'Deskripsi Momen 1' },
+  { src: '/foto/bayi2.jpg', alt: 'Deskripsi Momen 2' },
+  { src: '/foto/eyes.jpg', alt: 'Deskripsi Momen 3' },
+  { src: '/foto/we.jpeg', alt: 'Deskripsi Momen 4' },
+  { src: '/foto/mirror.jpg', alt: 'Deskripsi Momen 5' },
+  { src: '/foto/icecream.JPG', alt: 'Deskripsi Momen 6' },
+  { src: '/foto/leadden.JPG', alt: 'Deskripsi Momen 7' },
+  { src: '/foto/leadden2.JPG', alt: 'Deskripsi Momen 8' },
+  { src: '/foto/leadden3.JPG', alt: 'Deskripsi Momen 9' },
+  { src: '/foto/leadden4.JPG', alt: 'Deskripsi Momen 10' },
+  { src: '/foto/leadden5.JPG', alt: 'Deskripsi Momen 11' },
+  { src: '/foto/sma.jpg', alt: 'Deskripsi Momen 12' },
+  { src: '/foto/lari.jpg', alt: 'Deskripsi Momen 13' },
+  { src: '/foto/ramadan.jpg', alt: 'Deskripsi Momen 14' },
+  { src: '/foto/prettyback.jpg', alt: 'Deskripsi Momen 15' },
+  { src: '/foto/holdhand.jpg', alt: 'Deskripsi Momen 16' },
+  { src: '/foto/dino.jpg', alt: 'Deskripsi Momen 17' },
+  { src: '/foto/bayi3.jpg', alt: 'Deskripsi Momen 18' },
+  { src: '/foto/zoo.jpg', alt: 'Deskripsi Momen 19' },
+  { src: '/foto/redbg.jpeg', alt: 'Deskripsi Momen 20' }
+  // Anda bisa menambahkan lebih banyak foto sesuai kebutuhan.
+
+
+  // Tambahkan foto-foto lain di sini. Pastikan nama filenya sesuai.
+  // Formatnya adalah '/nama_folder_di_public/nama_file.ekstensi'
 ];
 // --- AKHIR AREA EDIT ---
 
@@ -37,8 +56,9 @@ const getDataNumber = (el, name, fallback) => {
 
 function buildItems(pool, seg) {
   const xCols = Array.from({ length: seg }, (_, i) => -37 + i * 2);
-  const evenYs = [-4, -2, 0, 2, 4];
-  const oddYs = [-3, -1, 1, 3, 5];
+  const evenYs = [-4, -2, 0, 2, 4, 6, -6, 8, -8];
+  const oddYs = [-3, -1, 1, 3, 5, 7, -5, -7, 9, -9];
+
 
   const coords = xCols.flatMap((x, c) => {
     const ys = c % 2 === 0 ? evenYs : oddYs;
