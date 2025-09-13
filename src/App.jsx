@@ -15,7 +15,7 @@ const DATA_KUTIPAN = [
   {
     text: "Selamat bertambah usia, orang yang paling kuat dan berhati lembut. Di hari spesial ini, aku ingin kamu tahu betapa aku mengagumi caramu menghadapi segalanya dengan senyuman. Kamu adalah inspirasiku. Terima kasih telah menjadi tempatku pulang, zona amanku, dan pendukung terbesarku. Dunia mungkin tidak selalu baik, tapi bersamamu, semuanya terasa mungkin. Semoga tahun ini membawa semua yang kamu impikan.",
     author: "Pata, Pacarmu",
-    emoji: "💫"
+    emoji: "✨"
   },
   { 
     text: "Happy 22nd birthdayyy! wow, you’re getting older now😋 but i really wish all the best for you. I hope you have a long and happy life, stay healthy, and everything you do goes smoothly. I hope all the good things always come to you, because you deserve it. I’m so thankful that i meet you, and thankful for every single thing about you. You always make me feel lucky, and i don’t take it for granted. Thanks for not leaving me when things were so hard for me. That means a lot. I love you sooooooo muchhh🫶🏼🫶🏼🫶🏼🫶🏼", 
@@ -25,12 +25,7 @@ const DATA_KUTIPAN = [
   { 
     text: "Happy birthday amiiyyy! meskipun ulang tahun kali ini kita ga bisa ngerayain langsung bareng bareng, aku harap ulang tahun kamu yang ke 22 ini adalah ulang tahun spesial karena you finally returned to your hometown!!!!! Damn god i'm so happy for youuu. Semoga kedepannya kamu sehat selalu, bahagia selalu dan semakin sukses. pokoknya wish you all the best!! btw i miss you already, hope you have a lot of fun in your hometown luvvv!!!!! <3",
     author: "Alis, Sahabat Tercinta",
-    emoji: "✨"
-  },
-  { 
-    text: "Ayumi mengajarkan saya arti dari keindahan sederhana dalam hidup. Bersamanya, dunia terasa lebih berwarna dan bermakna.", 
-    author: "Jec, Sahabat Tercinta",
-    emoji: "💫"
+    emoji: "🌿"
   },
   { 
     text: "マイナス1歳から死に向かっている。ジョコウィ万歳！ブロンド万歳！", 
@@ -38,10 +33,10 @@ const DATA_KUTIPAN = [
     emoji: "💫"
   },
   { 
-    text: "Ayumi mengajarkan saya arti dari keindahan sederhana dalam hidup. Bersamanya, dunia terasa lebih berwarna dan bermakna.", 
-    author: "Jec, Sahabat Tercinta",
-    emoji: "💫"
-  },
+    text: "Ami, hidup tuh jangan dibikin ribet. Soal makan, minum, atau apapun itu, santai aja! Yang penting kamu happy dan sehat. Selamat ulang tahun ya, semoga panjang umur, sehat selalu, dan semua cita-cita tercapai.", 
+    author: "Dika, Teman Seperjuangan",
+    emoji: "🕊️"
+  }
 ];
 // --- AKHIR AREA EDIT ---
 
@@ -308,25 +303,27 @@ const QuotesSection = () => (
       </motion.div>
       
       <div className="quotes-container elegant-quotes-grid">
-        {DATA_KUTIPAN.map((quote, index) => (
-          <motion.div 
-            key={index} 
-            className="quote-card elegant-quote-card" 
-            variants={itemVariants}
-            whileHover={{ 
-              y: -8,
-              scale: 1.02,
-              transition: { duration: 0.3 }
-            }}
-          >
-            <div className="quote-emoji">{quote.emoji}</div>
-            <blockquote className="quote-text elegant-quote-text">
-              "{quote.text}"
-            </blockquote>
-            <cite className="quote-author elegant-quote-author">
-              — {quote.author}
-            </cite>
-          </motion.div>
+        {DATA_KUTIPAN
+          .filter(quote => quote.text && quote.text.trim() !== "")
+          .map((quote, index) => (
+            <motion.div 
+              key={index} 
+              className="quote-card elegant-quote-card" 
+              variants={itemVariants}
+              whileHover={{ 
+                y: -8,
+                scale: 1.02,
+                transition: { duration: 0.3 }
+              }}
+            >
+              <div className="quote-emoji">{quote.emoji}</div>
+              <blockquote className="quote-text elegant-quote-text">
+                "{quote.text}"
+              </blockquote>
+              <cite className="quote-author elegant-quote-author">
+                — {quote.author}
+              </cite>
+            </motion.div>
         ))}
       </div>
     </div>
