@@ -705,3 +705,38 @@ section {
   height: 100% !important;
   display: block;
 }
+
+/* ===== BARU: GAYA TOMBOL MUSIK ===== */
+.music-toggle-btn {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 2000;
+  background: rgba(232, 220, 198, 0.4);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(232, 220, 198, 0.5);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: var(--text-color);
+  box-shadow: var(--shadow-soft);
+  transition: all 0.2s ease-in-out;
+}
+
+.music-toggle-btn:hover {
+  border-color: rgba(232, 220, 198, 0.8);
+  background: rgba(232, 220, 198, 0.6);
+}
+
+@media (max-width: 768px) {
+  .music-toggle-btn {
+    top: 16px;
+    right: 16px;
+    width: 44px;
+    height: 44px;
+  }
+}

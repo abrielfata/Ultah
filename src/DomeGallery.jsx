@@ -10,22 +10,28 @@ const FOTO_ANDA = [
   { src: '/foto/bayi2.jpg', alt: 'Deskripsi Momen 2' },
   { src: '/foto/eyes.jpg', alt: 'Deskripsi Momen 3' },
   { src: '/foto/we.jpeg', alt: 'Deskripsi Momen 4' },
-  { src: '/foto/mirror.jpg', alt: 'Deskripsi Momen 5' },
-  { src: '/foto/icecream.JPG', alt: 'Deskripsi Momen 6' },
+  { src: '/foto/alis3.jpg', alt: 'Deskripsi Momen 5' },
+  { src: '/foto/alis2.jpg', alt: 'Deskripsi Momen 6' },
   { src: '/foto/leadden.JPG', alt: 'Deskripsi Momen 7' },
   { src: '/foto/leadden2.JPG', alt: 'Deskripsi Momen 8' },
   { src: '/foto/leadden3.JPG', alt: 'Deskripsi Momen 9' },
   { src: '/foto/leadden4.JPG', alt: 'Deskripsi Momen 10' },
   { src: '/foto/leadden5.JPG', alt: 'Deskripsi Momen 11' },
-  { src: '/foto/sma.jpg', alt: 'Deskripsi Momen 12' },
+  { src: '/foto/alis4.jpg', alt: 'Deskripsi Momen 12' },
   { src: '/foto/lari.jpg', alt: 'Deskripsi Momen 13' },
   { src: '/foto/ramadan.jpg', alt: 'Deskripsi Momen 14' },
-  { src: '/foto/prettyback.jpg', alt: 'Deskripsi Momen 15' },
-  { src: '/foto/holdhand.jpg', alt: 'Deskripsi Momen 16' },
+  { src: '/foto/alis1.jpg', alt: 'Deskripsi Momen 15' },
+  { src: '/foto/alis5.jpg', alt: 'Deskripsi Momen 16' },
   { src: '/foto/dino.jpg', alt: 'Deskripsi Momen 17' },
   { src: '/foto/bayi3.jpg', alt: 'Deskripsi Momen 18' },
   { src: '/foto/zoo.jpg', alt: 'Deskripsi Momen 19' },
-  { src: '/foto/redbg.jpeg', alt: 'Deskripsi Momen 20' }
+  { src: '/foto/redbg.jpeg', alt: 'Deskripsi Momen 20' },
+  { src: '/foto/alis6.jpg', alt: 'Deskripsi Momen 21' },
+  { src: '/foto/alis7.jpg', alt: 'Deskripsi Momen 22' },
+  { src: '/foto/alis8.jpg', alt: 'Deskripsi Momen 23' },
+  { src: '/foto/alis9.jpg', alt: 'Deskripsi Momen 24' },
+  { src: '/foto/alis10.jpg', alt: 'Deskripsi Momen 25' }
+
   // Anda bisa menambahkan lebih banyak foto sesuai kebutuhan.
 
 

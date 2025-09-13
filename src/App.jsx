@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Heart, X, Camera, ArrowLeft, Sparkles, Star, Gift, Smile, Sun } from 'lucide-react';
+import React, { useState, useRef } from 'react'; // BARU: Menambahkan useRef
+import { Heart, X, Camera, Sparkles, Star, Gift, Music, Pause } from 'lucide-react'; // BARU: Menambahkan ikon Music & Pause
 import { motion, AnimatePresence } from 'framer-motion';
 import { HeroScene } from './HeroScene.jsx';
 import DomeGallery from './DomeGallery.jsx';
@@ -13,13 +13,13 @@ const TANGGAL_ULTAH = "14 September 2025";
 const LOKASI_KADO = "meja kerjamu";
 const DATA_KUTIPAN = [
   { 
-    text: "Happy 22nd birthdayyy! wow, you’re getting older now😋 but i really wish all the best for you. I hope you have a long and happy life, stay healthy, and everything you do goes smoothly. I hope all the good things always come to you, because you deserve it. I’m so thankful that i meet you, and thankful for every single thing about you. You always make me feel lucky, and i don’t take it for granted. Thanks for not leaving me when things were so hard for me. That means a lot.I love you sooooooo muchhh🫶🏼🫶🏼🫶🏼🫶🏼", 
-    author: "Ncip, Sahabat Tercinta",
+    text: "Ayumi adalah sosok yang selalu membawa ketenangan dalam setiap situasi. Kehadirannya seperti secangkir teh hangat di pagi yang dingin.", 
+    author: "Maya, Sahabat Karib",
     emoji: "🌸"
   },
   { 
-    text: "Happy birthday amiiyyy! meskipun ulang tahun kali ini kita ga bisa ngerayain langsung bareng bareng, aku harap ulang tahun kamu yang ke 22 ini adalah ulang tahun spesial karena you finally returned to your hometown!!!!! Damn god i'm so happy for youuu. Semoga kedepannya kamu sehat selalu, bahagia selalu dan semakin sukses. pokoknya wish you all the best!! btw i miss you already, hope you have a lot of fun in your hometown luvvv!!!!! <3",
-    author: "Alis, Sahabat Tercinta",
+    text: "Dia memiliki cara unik untuk membuat setiap orang merasa dihargai. Senyumnya adalah hadiah terbaik yang bisa diterima siapa pun.",
+    author: "Dika, Teman Kerja",
     emoji: "✨"
   },
   { 
@@ -203,7 +203,7 @@ const MessageSection = () => (
         
         <motion.div className="elegant-message-card" variants={itemVariants}>
           <p className="message-text elegant-text">
-            Setiap momen bersamamu adalah pelajaran berharga tentang bagaimana menghargai keindahan sederhana dalam hidup. Senyumanmu adalah cahaya yang menerangi hari-hari, dan hari ini, di hari kelahiranmu yang istimewa, aku ingin kamu tahu betapa berartinya kehadiranmu dalam hidup kita.
+            Setiap momen bersamamu adalah pelajaran berharga tentang bagaimana menghargai keindahan sederhana dalam hidup. Senyumanmu adalah cahaya yang menerangi hari-hari, dan hari ini, di hari kelahiranmu yang istimewa, aku ingin kamu tahu betapa berartinya kehadiranmu dalam hidupku.
           </p>
         </motion.div>
       </div>
@@ -387,8 +387,45 @@ const FinalSection = () => (
 function App() {
   const [galleryMode, setGalleryMode] = useState(false);
   
+  // BARU: State dan fungsi untuk kontrol musik
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef(null);
+
+  const toggleMusic = () => {
+    // Cek apakah audio sudah siap
+    if (audioRef.current) {
+      if (isPlaying) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current.play().catch(error => {
+          // Menangani error jika browser memblokir autoplay
+          console.error("Autoplay ditolak oleh browser:", error);
+        });
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
+  
   return (
     <div className="app elegant-app">
+      {/* BARU: Elemen audio dan tombol musik */}
+      <audio 
+        ref={audioRef} 
+        src="/music/kendis.mp3" // Ganti 'lagu-spesial.mp3' dengan nama file lagu Anda
+        loop 
+      />
+      <motion.button
+        className="music-toggle-btn"
+        onClick={toggleMusic}
+        title={isPlaying ? "Hentikan Musik" : "Putar Musik"}
+        initial={{ y: -60, opacity: 0 }}
+        animate={{ y: 0, opacity: 1, transition: { delay: 1, duration: 0.5 } }}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.95 }}
+      >
+        {isPlaying ? <Pause size={18} /> : <Music size={18} />}
+      </motion.button>
+      
       <AnimatePresence mode="wait">
         {!galleryMode && (
           <motion.div 
