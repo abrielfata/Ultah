@@ -276,8 +276,7 @@ const QuotesSection = () => (
     id="section-4" 
     className="quotes-section elegant-quotes" 
     initial="hidden" 
-    whileInView="visible" 
-    viewport={{ once: true, amount: 0.3 }} 
+    animate="visible"
     variants={containerVariants}
   >
     <div className="container">
