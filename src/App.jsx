@@ -13,18 +13,18 @@ const TANGGAL_ULTAH = "14 September 2025";
 const LOKASI_KADO = "meja kerjamu";
 const DATA_KUTIPAN = [
   { 
-    text: "Ayumi adalah sosok yang selalu membawa ketenangan dalam setiap situasi. Kehadirannya seperti secangkir teh hangat di pagi yang dingin.", 
-    author: "Maya, Sahabat Karib",
+    text: "Happy 22nd birthdayyy! wow, you’re getting older now😋 but i really wish all the best for you. I hope you have a long and happy life, stay healthy, and everything you do goes smoothly. I hope all the good things always come to you, because you deserve it. I’m so thankful that i meet you, and thankful for every single thing about you. You always make me feel lucky, and i don’t take it for granted. Thanks for not leaving me when things were so hard for me. That means a lot. I love you sooooooo muchhh🫶🏼🫶🏼🫶🏼🫶🏼", 
+    author: "NCIP, Sahabat Tercinta",
     emoji: "🌸"
   },
   { 
-    text: "Dia memiliki cara unik untuk membuat setiap orang merasa dihargai. Senyumnya adalah hadiah terbaik yang bisa diterima siapa pun.",
-    author: "Dika, Teman Kerja",
+    text: "Happy birthday amiiyyy! meskipun ulang tahun kali ini kita ga bisa ngerayain langsung bareng bareng, aku harap ulang tahun kamu yang ke 22 ini adalah ulang tahun spesial karena you finally returned to your hometown!!!!! Damn god i'm so happy for youuu. Semoga kedepannya kamu sehat selalu, bahagia selalu dan semakin sukses. pokoknya wish you all the best!! btw i miss you already, hope you have a lot of fun in your hometown luvvv!!!!! <3",
+    author: "Alis, Sahabat Tercinta",
     emoji: "✨"
   },
   { 
     text: "Ayumi mengajarkan saya arti dari keindahan sederhana dalam hidup. Bersamanya, dunia terasa lebih berwarna dan bermakna.", 
-    author: "Ravi, Yang Mengagumi",
+    author: "Jec, Sahabat Tercinta",
     emoji: "💫"
   }
 ];
@@ -203,7 +203,7 @@ const MessageSection = () => (
         
         <motion.div className="elegant-message-card" variants={itemVariants}>
           <p className="message-text elegant-text">
-            Setiap momen bersamamu adalah pelajaran berharga tentang bagaimana menghargai keindahan sederhana dalam hidup. Senyumanmu adalah cahaya yang menerangi hari-hari, dan hari ini, di hari kelahiranmu yang istimewa, aku ingin kamu tahu betapa berartinya kehadiranmu dalam hidupku.
+            Setiap momen bersamamu adalah pelajaran berharga tentang bagaimana menghargai keindahan sederhana dalam hidup. Senyumanmu adalah cahaya yang menerangi hari-hari, dan hari ini, di hari kelahiranmu yang istimewa, aku ingin kamu tahu betapa berartinya kehadiranmu dalam hidup kita.
           </p>
         </motion.div>
       </div>
